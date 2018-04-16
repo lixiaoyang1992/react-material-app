@@ -1,17 +1,24 @@
 import * as React from "react";
-import { Button } from "material-ui";
-import "./App.css";
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from "redux-saga";
+import sagaMonitor from "./sagaMonitor";
+import { Provider } from "react-redux";
 
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <Button variant="raised" color="primary">
-          Hello World
-        </Button>
-      </div>
-    );
-  }
+import Routers from "./Router";
+import reducers from "./reducer";
+
+// const middleware = [];
+if (process.env.NODE_ENV !== "production") {
+  // middleware.push(createLogger());
 }
+
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
+const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+
+const App = () => (
+  <Provider store={store}>
+    <Routers />
+  </Provider>
+);
 
 export default App;
