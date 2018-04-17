@@ -13,7 +13,6 @@ const styles = (theme: any) => ({
 
 const TextFieldMargins = (props: any) => {
   const { classes } = props;
-
   return (
     <Paper
       elevation={4}
