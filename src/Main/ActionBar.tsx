@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Typography, IconButton } from "material-ui";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { Link } from "react-router-dom";
+import Menu from "./Menu";
 
 const styles = {
   root: {
@@ -51,6 +52,7 @@ function SimpleAppBar(props: any) {
           </Link>
         </Toolbar>
       </AppBar>
+      <Menu />
     </div>
   );
 }
