@@ -14,8 +14,8 @@ module.exports = function override(config, env) {
     getCustomTransformers: () => ({
       before: [
         tsImportPluginFactory({
-          libraryName: "material-ui",
-          libraryDirectory: "",
+          libraryName: "@material-ui",
+          libraryDirectory: "core",
           camel2DashComponentName: false
         })
       ]

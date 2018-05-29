@@ -1,6 +1,8 @@
 import * as React from "react";
-import { withStyles } from "material-ui/styles";
-import { Paper, TextField, Button } from "material-ui";
+import { withStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
 const styles = (theme: any) => ({

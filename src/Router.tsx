@@ -1,11 +1,10 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import CssBaseline from "material-ui/CssBaseline";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import blue from "@material-ui/core/colors/blue";
 import Main from "./Main";
 import Login from "./Login";
-
-import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
-import blue from "material-ui/colors/blue";
 
 const theme = createMuiTheme({
   palette: {
@@ -16,11 +15,11 @@ const theme = createMuiTheme({
 const App = () => (
   <MuiThemeProvider theme={theme}>
     <Router>
-      <React.Fragment>
+      <>
         <CssBaseline />
         <Route exact={true} path="/" component={Main} />
         <Route path="/login" component={Login} />
-      </React.Fragment>
+      </>
     </Router>
   </MuiThemeProvider>
 );
