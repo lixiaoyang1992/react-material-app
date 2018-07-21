@@ -2,7 +2,10 @@
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "object-literal-sort-keys": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "no-console": false,
+    "no-empty": false,
+    "no-empty-interface": false
   },
   "linterOptions": {
     "exclude": ["config/**/*.js", "node_modules/**/*.ts", "config-overrides.js"]

@@ -1,12 +1,13 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import { UserContext } from './UserContext';
 
 const styles = {
   root: {
@@ -27,7 +28,7 @@ function SimpleAppBar(props: any) {
     <div
       className={classes.root}
       style={{
-        position: "fixed",
+        position: 'fixed',
         top: 0,
         left: 0,
         right: 0
@@ -42,13 +43,23 @@ function SimpleAppBar(props: any) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Title
-          </Typography>
+
+          <UserContext.Consumer>
+            {({ name }) => (
+              <Typography
+                variant="title"
+                color="inherit"
+                className={classes.flex}
+              >
+                {name}
+              </Typography>
+            )}
+          </UserContext.Consumer>
+
           <Link to="/login">
             <AccountCircle
               style={{
-                color: "white"
+                color: 'white'
               }}
             />
           </Link>
