@@ -12,7 +12,7 @@ class List extends React.Component<IMainProps, {}> {
       <div style={{ marginTop: 100, marginLeft: 50 }}>
         <UserContext.Consumer>
           {({ login }) => (
-            <Button variant="contained" color="primary" onClick={login}>
+            <Button color="primary" onClick={login}>
               登录
             </Button>
           )}
