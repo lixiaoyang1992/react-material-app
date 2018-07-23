@@ -11,18 +11,18 @@ const Loading = () => {
 
 const LoadableMian = Loadable({
   loader: () => import('./Main'),
-  loading: Loading,
+  loading: Loading
 });
 
 const LoadableLogin = Loadable({
   loader: () => import('./Login'),
-  loading: Loading,
+  loading: Loading
 });
 
 const theme = createMuiTheme({
   palette: {
-    primary: blue,
-  },
+    primary: blue
+  }
 });
 
 const App = () => (

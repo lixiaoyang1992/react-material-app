@@ -5,9 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import { UserContext } from '../withUser';
+import ArrowBack from '@material-ui/icons/ArrowBack';
 
 const styles = {
   root: {
@@ -19,6 +17,9 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  link: {
+    color: '#fff'
   }
 };
 
@@ -41,28 +42,14 @@ function SimpleAppBar(props: any) {
             color="inherit"
             aria-label="Menu"
           >
-            <MenuIcon />
+            <Link to="/" className={classes.link}>
+              <ArrowBack />
+            </Link>
           </IconButton>
 
-          <UserContext.Consumer>
-            {({ name }) => (
-              <Typography
-                variant="title"
-                color="inherit"
-                className={classes.flex}
-              >
-                {name || '请登录'}
-              </Typography>
-            )}
-          </UserContext.Consumer>
-
-          <Link to="/login">
-            <AccountCircle
-              style={{
-                color: 'white'
-              }}
-            />
-          </Link>
+          <Typography variant="title" color="inherit" className={classes.flex}>
+            登录
+          </Typography>
         </Toolbar>
       </AppBar>
     </div>
