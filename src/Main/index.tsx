@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ActionBar from './ActionBar';
 import List from './List';
-import withUser from '../withUser';
 
 const Main = () => {
   return (
@@ -12,4 +11,4 @@ const Main = () => {
   );
 };
 
-export default withUser(Main);
+export default Main;

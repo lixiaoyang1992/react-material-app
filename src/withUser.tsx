@@ -6,6 +6,8 @@ interface IProps {
   history: any;
 }
 
+interface ICP {}
+
 export interface IUser {
   name: string;
   login: () => void;
@@ -18,11 +20,9 @@ const defaultValue: IUser = {
 
 export const UserContext = React.createContext(defaultValue);
 
-const withUser = <P extends IProps>(
-  UnwrappedComponent: React.ComponentType<P>
-) =>
-  class WithBlueBackground extends React.Component<P, IUser> {
-    constructor(props: P) {
+const withUser = <P extends ICP>(UnwrappedComponent: React.ComponentType<P>) =>
+  class WithBlueBackground extends React.Component<P & IProps, IUser> {
+    constructor(props: P & IProps) {
       super(props);
       this.state = {
         name: '',
@@ -38,7 +38,6 @@ const withUser = <P extends IProps>(
     };
 
     public render() {
-      console.log(this.state, this.props);
       return (
         <UserContext.Provider value={this.state}>
           <UnwrappedComponent {...this.props} />

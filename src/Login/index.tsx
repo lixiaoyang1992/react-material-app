@@ -1,11 +1,8 @@
 import * as React from 'react';
 import ActionBar from './ActionBar';
 import Form from './Form';
-import withUser from '../withUser';
 
-interface IProps {
-  history: any;
-}
+interface IProps {}
 
 class Main extends React.Component<IProps, {}> {
   public render() {
@@ -18,4 +15,4 @@ class Main extends React.Component<IProps, {}> {
   }
 }
 
-export default withUser(Main);
+export default Main;
