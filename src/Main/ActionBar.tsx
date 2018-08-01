@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import { UserContext } from '../withUser';
+import { UserContext } from '../Context/User';
 
 const styles = {
   root: {

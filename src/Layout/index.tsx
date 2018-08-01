@@ -1,19 +1,19 @@
 import * as React from 'react';
 import * as Loadable from 'react-loadable';
 import { Route, Switch } from 'react-router-dom';
-import withUser from './withUser';
+import withUser from '../Context/User';
 
 const Loading = () => {
   return <div>Loading...</div>;
 };
 
 const LoadableMian = Loadable({
-  loader: () => import('./Main'),
+  loader: () => import('../Main'),
   loading: Loading
 });
 
 const LoadableLogin = Loadable({
-  loader: () => import('./Login'),
+  loader: () => import('../Login'),
   loading: Loading
 });
 
