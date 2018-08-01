@@ -33,7 +33,7 @@
     "react-app-rewired": "^1.5.2",
     "react-scripts-ts": "2.16.0",
     "ts-import-plugin": "^1.4.5",
-    "typescript": "^2.9.0"
+    "typescript": "^3.0.1"
   },
   "husky": {
     "hooks": {
