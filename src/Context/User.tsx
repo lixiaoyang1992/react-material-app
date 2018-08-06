@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-export type ColorShade = 'light' | 'dark';
-
 interface IProps {
   history: any;
 }

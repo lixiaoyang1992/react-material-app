@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import withUser from '../Context/User';
 
 const Loading = () => {
-  return <div>Loading...</div>;
+  return null;
 };
 
 const LoadableMian = Loadable({

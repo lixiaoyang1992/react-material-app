@@ -45,5 +45,6 @@
       "prettier --single-quote --write",
       "git add"
     ]
-  }
+  },
+  "proxy": "http://api.douban.com"
 }
