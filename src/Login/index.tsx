@@ -4,7 +4,9 @@ import Form from './Form';
 
 interface IProps {}
 
-class Main extends React.Component<IProps, {}> {
+interface IState {}
+
+class Main extends React.Component<IProps, IState> {
   public render() {
     return (
       <React.Fragment>

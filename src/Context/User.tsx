@@ -1,26 +1,23 @@
 import * as React from 'react';
 
-interface IProps {
+export interface IUCP {
   history: any;
 }
 
-interface ICP {}
-
-export interface IUser {
+export interface IState {
   name: string;
   login: () => void;
 }
 
-const defaultValue: IUser = {
-  name: 'user',
+const defaultValue: IState = {
+  name: 'login',
   login: () => {}
 };
-
 export const UserContext = React.createContext(defaultValue);
 
-const withUser = <P extends ICP>(UnwrappedComponent: React.ComponentType<P>) =>
-  class WithBlueBackground extends React.Component<P & IProps, IUser> {
-    constructor(props: P & IProps) {
+const withUser = <P extends IUCP>(UnwrappedComponent: React.ComponentType<P>) =>
+  class WithBlueBackground extends React.Component<P, IState> {
+    constructor(props: P) {
       super(props);
       this.state = {
         name: '',

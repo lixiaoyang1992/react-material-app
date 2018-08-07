@@ -1,9 +1,11 @@
 import * as React from 'react';
 import withMovie, { MovieContext } from '../Context/Movie';
 
-interface IMainProps {}
+interface IProps {}
 
-class List extends React.Component<IMainProps, {}> {
+interface IState {}
+
+class List extends React.Component<IProps, IState> {
   public render() {
     return (
       <div style={{ marginTop: 100, marginLeft: 50 }}>
