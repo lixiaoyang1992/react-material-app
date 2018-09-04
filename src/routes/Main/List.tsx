@@ -1,5 +1,5 @@
 import * as React from 'react';
-import withMovie, { MovieContext } from '../Context/Movie';
+import withMovie, { MovieContext } from '../../Context/Movie';
 
 interface IProps {}
 

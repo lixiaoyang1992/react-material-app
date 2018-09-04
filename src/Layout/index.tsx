@@ -5,12 +5,12 @@ import withUser, { IUCP } from '../Context/User';
 import Loading from './Loading';
 
 const LoadableMian = Loadable({
-  loader: () => import('../Main'),
+  loader: () => import('../routes/Main'),
   loading: Loading
 });
 
 const LoadableLogin = Loadable({
-  loader: () => import('../Login'),
+  loader: () => import('../routes/Login'),
   loading: Loading
 });
 
