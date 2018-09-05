@@ -6,9 +6,9 @@ const site = 'http://localhost:4000';
 describe('首页', () => {
   let browser: puppeteer.Browser;
   let page: puppeteer.Page;
-  fs.ensureDirSync('./screenshot');
 
-  test('设置', async () => {
+  beforeAll(async () => {
+    fs.ensureDirSync('./screenshot');
     browser = await puppeteer.launch({
       executablePath: '/Applications/Chromium.app/Contents/MacOS/Chromium'
       // headless: false
@@ -16,6 +16,10 @@ describe('首页', () => {
     page = await browser.newPage();
     // 设置浏览器视窗
     await page.setViewport({ width: 1440, height: 722 });
+  });
+
+  afterAll(async () => {
+    browser.close();
   });
 
   test(
@@ -31,8 +35,4 @@ describe('首页', () => {
     },
     20000
   );
-
-  test('关闭', async () => {
-    browser.close();
-  });
 });
