@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { inTheaters } from '../services/movie';
 
 interface IUCP {}
 
@@ -47,15 +48,15 @@ const withMovie = <P extends IUCP>(
     constructor(props: P) {
       super(props);
       this.state = defaultState;
-
-      fetch('/v2/movie/in_theaters')
-        .then(res => res.json())
-        .then((data: IRes) => {
-          this.setState({
-            list: data.subjects
-          });
-        });
+      this.list();
     }
+
+    public list = async () => {
+      const res: IRes = await inTheaters();
+      this.setState({
+        list: res.subjects
+      });
+    };
 
     public render() {
       return (

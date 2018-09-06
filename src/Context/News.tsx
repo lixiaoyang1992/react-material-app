@@ -37,7 +37,6 @@ const withNews = <P extends IProps>(
 
     public list = async () => {
       const res: IRes = await latest();
-      console.log(123, res);
       this.setState({
         list: res.stories
       });

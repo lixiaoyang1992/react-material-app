@@ -1,3 +1,3 @@
 import request from '../utils/request';
 
-export const fetchUser = () => request('/user/info');
+export const inTheaters = () => request('/v2/movie/in_theaters');

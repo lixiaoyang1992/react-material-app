@@ -51,7 +51,7 @@ function SimpleAppBar(props: any) {
                 color="inherit"
                 className={classes.flex}
               >
-                {name || '请登录'}
+                {name || '首页'}
               </Typography>
             )}
           </UserContext.Consumer>

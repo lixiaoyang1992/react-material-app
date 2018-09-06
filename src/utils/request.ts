@@ -1,4 +1,4 @@
-import 'whatwg-fetch';
+// import 'whatwg-fetch';
 
 function checkStatus(response: any) {
   if (response.status >= 200 && response.status < 300) {
@@ -20,10 +20,10 @@ function checkStatus(response: any) {
 export default async function request(url: string, options?: {}) {
   const response = await fetch(url, {
     ...options,
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    credentials: 'include'
+    // headers: {
+    //   'Content-Type': 'application/json'
+    // }
   });
 
   checkStatus(response);
