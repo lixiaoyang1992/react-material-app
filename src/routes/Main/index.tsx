@@ -1,11 +1,11 @@
 import * as React from 'react';
-import ActionBar from './ActionBar';
 import List from './List';
+import Nav from './Nav';
 
 const Main = () => {
   return (
     <React.Fragment>
-      <ActionBar />
+      <Nav />
       <List />
     </React.Fragment>
   );

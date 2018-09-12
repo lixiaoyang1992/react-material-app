@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { History } from 'history';
 
 export interface IUCP {
-  history: any;
+  history: History;
 }
 
 export interface IState {

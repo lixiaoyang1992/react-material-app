@@ -14,12 +14,18 @@ const LoadableLogin = Loadable({
   loading: Loading
 });
 
+const LoadableMovie = Loadable({
+  loader: () => import('../routes/Movie'),
+  loading: Loading
+});
+
 class Layout extends React.Component<IUCP> {
   public render() {
     return (
       <Switch>
         <Route exact={true} path="/" component={LoadableMian} />
         <Route path="/login" component={LoadableLogin} />
+        <Route path="/movie/:id" component={LoadableMovie} />
       </Switch>
     );
   }

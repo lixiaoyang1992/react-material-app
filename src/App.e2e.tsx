@@ -25,7 +25,7 @@ describe('首页', () => {
   test(
     '首页',
     async () => {
-      await page.goto(site + '', {
+      await page.goto(site + '/', {
         waitUntil: 'networkidle0' // 等待网络状态为空闲的时候才继续执行
       });
       await page.screenshot({
