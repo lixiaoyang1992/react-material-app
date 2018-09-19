@@ -2,7 +2,7 @@ import * as React from 'react';
 import List from './List';
 import Nav from './Nav';
 
-const Main = () => {
+const Main: React.SFC = () => {
   return (
     <React.Fragment>
       <Nav />

@@ -3,10 +3,6 @@ import { inTheaters } from '../services/movie';
 
 interface IUCP {}
 
-interface IState {
-  list: ISubject[];
-}
-
 interface IRes {
   title: string;
   total: number;
@@ -36,18 +32,24 @@ interface ISubject {
   subtype: string;
 }
 
-const defaultState: IState = {
-  list: []
+const arr: ISubject[] = [];
+
+const initialState = {
+  list: arr
 };
-export const MovieContext = React.createContext(defaultState);
+
+type IState = Readonly<typeof initialState>;
+
+export const MovieContext = React.createContext(initialState);
 
 const withMovie = <P extends IUCP>(
   UnwrappedComponent: React.ComponentType<P>
 ) =>
   class WithBlueBackground extends React.Component<P, IState> {
+    public readonly state: IState = initialState;
+
     constructor(props: P) {
       super(props);
-      this.state = defaultState;
       this.list();
     }
 

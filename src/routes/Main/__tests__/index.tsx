@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import List from '../ActionBar';
+import List from '../index';
 
 describe('Button', () => {
   it('rerendersnd title', () => {

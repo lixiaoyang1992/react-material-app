@@ -3,7 +3,7 @@ import { NavBar, Icon } from 'antd-mobile';
 
 interface IProps {}
 
-const Nav = (props: IProps) => {
+const Nav: React.SFC<IProps> = props => {
   return (
     <NavBar
       mode="dark"
