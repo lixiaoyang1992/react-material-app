@@ -1,12 +1,14 @@
 import * as React from 'react';
 import List from './List';
-import Nav from './Nav';
+import AppBar from './AppBar';
 
 const Main: React.SFC = () => {
   return (
     <React.Fragment>
-      <Nav />
-      <List />
+      <AppBar />
+      <div style={{ paddingTop: 80 }}>
+        <List />
+      </div>
     </React.Fragment>
   );
 };

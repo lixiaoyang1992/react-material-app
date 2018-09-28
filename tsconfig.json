@@ -17,7 +17,6 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true, // 允许 import React from 'react'; 写法，等antd-mobile更新之后关掉
     "experimentalDecorators": true
   },
   "exclude": [

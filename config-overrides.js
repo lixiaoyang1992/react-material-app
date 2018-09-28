@@ -15,21 +15,9 @@ module.exports = function override(config, env) {
     getCustomTransformers: () => ({
       before: [
         tsImportPluginFactory({
-          libraryName: '@material-ui',
-          libraryDirectory: 'core',
+          libraryName: '@material-ui/core',
+          libraryDirectory: '',
           camel2DashComponentName: false
-        })
-      ]
-    })
-  };
-
-  tsLoader.options = {
-    getCustomTransformers: () => ({
-      before: [
-        tsImportPluginFactory({
-          libraryDirectory: 'es',
-          libraryName: 'antd-mobile',
-          style: true
         })
       ]
     })

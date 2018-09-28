@@ -23,7 +23,6 @@
     "@types/react-intl": "^2.3.8",
     "@types/react-loadable": "^5.4.0",
     "@types/react-router-dom": "^4.3.0",
-    "antd-mobile": "^2.2.5",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-intl": "^2.5.0",
