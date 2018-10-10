@@ -1,13 +1,13 @@
 import * as React from 'react';
-import List from './List';
 import AppBar from './AppBar';
+import ExchangeRates from './ExchangeRates';
 
 const Main: React.SFC = () => {
   return (
     <React.Fragment>
       <AppBar />
       <div className="a" style={{ paddingTop: 80 }}>
-        <List />
+        <ExchangeRates />
       </div>
     </React.Fragment>
   );
