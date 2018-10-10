@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import List from '../index';
 
-describe('Button', () => {
-  it('rerendersnd title', () => {
+describe('Main', () => {
+  it('basic render', () => {
     const comp = <List />;
     const wrapper = shallow(comp);
-    expect(wrapper.find('.checkable-tag')).to.have.length(1);
+    expect(wrapper.find('.a')).to.have.length(1);
   });
 });
