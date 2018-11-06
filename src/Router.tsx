@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Layout from './Layout';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+const Main = React.lazy(() => import('./routes/Main'));
 
 const App = () => {
   return (
     <Router>
-      <Route path="/" render={props => <Layout {...props} />} />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Route exact={true} path="/" render={props => <Main {...props} />} />
+        </Switch>
+      </React.Suspense>
     </Router>
   );
 };

@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { ApolloProvider } from 'react-apollo';
-import ApolloClient from 'apollo-boost';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
@@ -20,10 +18,6 @@ const theme = createMuiTheme({
 addLocaleData(en);
 addLocaleData(zh);
 
-const client = new ApolloClient({
-  uri: 'https://api.github.com/graphql'
-});
-
 const App = () => {
   // 国际化
   const language = localStorage.getItem('language') || 'zh';
@@ -37,16 +31,14 @@ const App = () => {
     messages = enUS;
   }
   return (
-    <ApolloProvider client={client}>
-      <IntlProvider locale={locale} messages={messages}>
-        <MuiThemeProvider theme={theme}>
-          <>
-            <CssBaseline />
-            <Routers />
-          </>
-        </MuiThemeProvider>
-      </IntlProvider>
-    </ApolloProvider>
+    <IntlProvider locale={locale} messages={messages}>
+      <MuiThemeProvider theme={theme}>
+        <>
+          <CssBaseline />
+          <Routers />
+        </>
+      </MuiThemeProvider>
+    </IntlProvider>
   );
 };
 

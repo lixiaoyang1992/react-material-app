@@ -1,16 +1,15 @@
 import * as React from 'react';
 import AppBar from './AppBar';
-import ExchangeRates from './ExchangeRates';
+import withUser, { IUCP } from 'src/Context/User';
 
-const Main: React.SFC = () => {
-  return (
-    <React.Fragment>
-      <AppBar />
-      <div className="a" style={{ paddingTop: 80 }}>
-        <ExchangeRates />
-      </div>
-    </React.Fragment>
-  );
-};
+class Main extends React.Component<IUCP> {
+  public render() {
+    return (
+      <React.Fragment>
+        <AppBar />
+      </React.Fragment>
+    );
+  }
+}
 
-export default Main;
+export default withUser(Main);
