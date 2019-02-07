@@ -1,15 +1,12 @@
 import * as React from 'react';
 import AppBar from './AppBar';
-import withUser, { IUCP } from '../../Context/User';
 
-class Main extends React.Component<IUCP> {
-  public render() {
-    return (
-      <React.Fragment>
-        <AppBar />
-      </React.Fragment>
-    );
-  }
-}
+const Main: React.SFC<object> = () => {
+  return (
+    <>
+      <AppBar />
+    </>
+  );
+};
 
-export default withUser(Main);
+export default Main;

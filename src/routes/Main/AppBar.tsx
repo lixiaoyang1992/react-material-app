@@ -29,8 +29,8 @@ const ButtonAppBar: React.SFC<IProps> = props => {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Movie
+          <Typography variant="h6" color="inherit" className={classes.flex}>
+            Home
           </Typography>
         </Toolbar>
       </AppBar>

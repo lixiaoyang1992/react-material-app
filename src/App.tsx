@@ -7,6 +7,9 @@ import Routers from './Router';
 const theme = createMuiTheme({
   palette: {
     primary: blue
+  },
+  typography: {
+    useNextVariants: true
   }
 });
 
