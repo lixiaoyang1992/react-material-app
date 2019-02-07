@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AppBar from './AppBar';
-import withUser, { IUCP } from 'src/Context/User';
+import withUser, { IUCP } from '../../Context/User';
 
 class Main extends React.Component<IUCP> {
   public render() {
