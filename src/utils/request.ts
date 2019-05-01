@@ -20,7 +20,7 @@ function checkStatus(response: Response) {
 export default async function request(url: string, options?: {}) {
   const response = await fetch(url, {
     ...options,
-    credentials: 'include'
+    credentials: "include"
     // headers: {
     //   'Content-Type': 'application/json'
     // }
@@ -29,11 +29,6 @@ export default async function request(url: string, options?: {}) {
   checkStatus(response);
 
   const data = await response.json();
-
-  const ret = {
-    data,
-    headers: {}
-  };
 
   return data;
 }

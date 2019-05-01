@@ -1,13 +1,14 @@
-const { override, fixBabelImports, addLessLoader } = require('customize-cra');
+const { override, addLessLoader } = require("customize-cra");
+const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+
+const addPlugin = plugin => config => {
+  config.plugins.push(plugin);
+  return config;
+};
 
 module.exports = override(
-  fixBabelImports('import', {
-    libraryName: 'antd',
-    libraryDirectory: 'es',
-    style: true
-  }),
   addLessLoader({
-    javascriptEnabled: true,
-    modifyVars: { '@primary-color': '#1DA57A' }
-  })
+    javascriptEnabled: true
+  }),
+  addPlugin(new ProgressBarPlugin())
 );
