@@ -1,24 +1,43 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-
-import { systemReducer } from "./system/reducers";
+import {
+  connectRouter,
+  routerMiddleware,
+  RouterState
+} from "connected-react-router";
+import { createBrowserHistory, History } from "history";
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { chatReducer } from "./chat/reducers";
+import { systemReducer } from "./system/reducers";
+import { SystemState } from "./system/types";
+import { ChatState } from "./chat/types";
+import { layoutReducer } from "./layout/reducers";
+import { LayoutState } from "./layout/types";
 
-const rootReducer = combineReducers({
-  system: systemReducer,
-  chat: chatReducer
-});
+export const history = createBrowserHistory();
 
-export type AppState = ReturnType<typeof rootReducer>;
+const rootReducer = (history: History) =>
+  combineReducers({
+    router: connectRouter(history),
+    system: systemReducer,
+    chat: chatReducer,
+    layout: layoutReducer
+  });
+
+export interface AppState {
+  router: RouterState;
+  system: SystemState;
+  chat: ChatState;
+  layout: LayoutState;
+}
 
 export default function configureStore() {
-  const middlewares = [thunkMiddleware];
-  const middleWareEnhancer = applyMiddleware(...middlewares);
-
   const store = createStore(
-    rootReducer,
-    composeWithDevTools(middleWareEnhancer)
+    rootReducer(history),
+    compose(
+      applyMiddleware(
+        routerMiddleware(history) // for dispatching history actions
+        // ... other middlewares ...
+      )
+    )
   );
 
   return store;
