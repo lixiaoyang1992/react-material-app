@@ -10,11 +10,13 @@ import "./style.less";
 const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <MeterialContainer>
-      <Routers />
-    </MeterialContainer>
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <MeterialContainer>
+        <Routers />
+      </MeterialContainer>
+    </Provider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

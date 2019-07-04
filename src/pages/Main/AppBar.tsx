@@ -47,7 +47,7 @@ const ButtonAppBar: React.FC = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            {pathname}
+            {pathname === "/" ? "首页" : pathname}
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
