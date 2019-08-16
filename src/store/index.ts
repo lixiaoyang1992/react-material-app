@@ -6,8 +6,8 @@ import {
 import { createBrowserHistory, History } from "history";
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { chatReducer } from "./chat/reducers";
-import { systemReducer } from "./system/reducers";
-import { SystemState } from "./system/types";
+import { systemReducer } from "./news/reducers";
+import { SystemState } from "./news/types";
 import { ChatState } from "./chat/types";
 import { layoutReducer } from "./layout/reducers";
 import { LayoutState } from "./layout/types";

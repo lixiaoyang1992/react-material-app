@@ -1,28 +1,25 @@
 import React from "react";
+import Toolbar from "@material-ui/core/Toolbar";
 import AppBar from "./AppBar";
-import Navigation from "./Navigation";
 import { Switch, Route } from "react-router";
 import TemporaryDrawer from "./Drawer";
 
 const Favorites = React.lazy(() => import("../Favorites"));
-const Folder = React.lazy(() => import("../Folder"));
-const Nearby = React.lazy(() => import("../Nearby"));
-const Recents = React.lazy(() => import("../Recents"));
+const Home = React.lazy(() => import("../Home"));
 
 const Main: React.FC = () => {
   return (
     <>
       <AppBar />
+      <Toolbar />
       <TemporaryDrawer />
       <React.Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          <Route path="/recents" component={Recents} />
+          <Route path="/recents" component={Home} />
           <Route path="/favorites" component={Favorites} />
-          <Route path="/nearby" component={Nearby} />
-          <Route path="/folder" component={Folder} />>
+          <Route component={Home} />
         </Switch>
       </React.Suspense>
-      <Navigation />
     </>
   );
 };

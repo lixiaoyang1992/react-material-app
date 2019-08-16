@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import MeterialContainer from "./MeterialContainer";
 import Routers from "./Router";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./store";
+import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
+import theme from "./theme";
 import "./style.less";
 
 const store = configureStore();
@@ -12,9 +13,10 @@ const store = configureStore();
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <MeterialContainer>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
         <Routers />
-      </MeterialContainer>
+      </MuiThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
