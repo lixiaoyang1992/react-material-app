@@ -1,5 +1,5 @@
-const { override, addLessLoader } = require("customize-cra");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const { override, addLessLoader } = require('customize-cra');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const addPlugin = plugin => config => {
   config.plugins.push(plugin);
@@ -8,7 +8,7 @@ const addPlugin = plugin => config => {
 
 module.exports = override(
   addLessLoader({
-    javascriptEnabled: true
+    javascriptEnabled: true,
   }),
-  addPlugin(new ProgressBarPlugin())
+  addPlugin(new ProgressBarPlugin()),
 );

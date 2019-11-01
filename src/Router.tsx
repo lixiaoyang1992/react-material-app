@@ -1,15 +1,18 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import { ConnectedRouter } from "connected-react-router";
-import { history } from "./store/index";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import Loading from './components/PageLoading';
+import { createBrowserHistory } from 'history';
 
-const Main = React.lazy(() => import("./pages/Main"));
-const Setting = React.lazy(() => import("./pages/Setting"));
+const Main = React.lazy(() => import('./pages/Main'));
+const Setting = React.lazy(() => import('./pages/Setting'));
 
-const App = () => {
+export const history = createBrowserHistory();
+
+const Routes = () => {
   return (
     <ConnectedRouter history={history}>
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense fallback={<Loading />}>
         <Switch>
           <Route path="/index" component={Main} />
           <Route path="/setting" component={Setting} />
@@ -20,4 +23,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Routes;

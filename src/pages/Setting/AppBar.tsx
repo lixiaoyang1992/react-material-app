@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const AppBar: React.FC = () => {
   return <div>AppBar</div>;

@@ -1,28 +1,29 @@
-import React from "react";
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import { useLatestNews } from "../../hooks/zhihu";
+import React from 'react';
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { useSelector } from 'react-redux';
+import { RootState } from 'typesafe-actions';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       margin: 20,
-      display: "flex"
+      display: 'flex',
     },
     title: {
-      padding: 20
+      padding: 20,
     },
     img: {
       height: 150,
-      width: 150
-    }
-  })
+      width: 150,
+    },
+  }),
 );
 
 export default function PaperSheet() {
   const classes = useStyles();
-  const news = useLatestNews();
+  const news = useSelector((state: RootState) => state.zhihu.list);
   return (
     <>
       {news.map(data => (

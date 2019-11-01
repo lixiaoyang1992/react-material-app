@@ -1,14 +1,7 @@
-import React from "react";
-import Content from "./Content";
-import AppBar from "./AppBar";
+import React from 'react';
 
-const Index: React.FC = () => {
-  return (
-    <>
-      <AppBar />
-      <Content />
-    </>
-  );
+const Index: React.FC = props => {
+  return <div>Setting</div>;
 };
 
 export default Index;

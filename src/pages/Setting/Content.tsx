@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Content: React.FC = () => {
   return <div className="content">Setting</div>;

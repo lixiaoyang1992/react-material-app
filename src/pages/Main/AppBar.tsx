@@ -1,28 +1,28 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import { AppState } from "../../store";
-import { toggleDrawerAction } from "../../store/layout/actions";
-import { useScrollTrigger } from "@material-ui/core";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { toggleDrawerAction } from './actions/actions';
+import { useScrollTrigger } from '@material-ui/core';
+import { RootState } from 'typesafe-actions';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1
+      flexGrow: 1,
     },
     menuButton: {
-      marginRight: theme.spacing(2)
+      marginRight: theme.spacing(2),
     },
     title: {
-      flexGrow: 1
-    }
-  })
+      flexGrow: 1,
+    },
+  }),
 );
 
 interface Props {
@@ -42,19 +42,17 @@ function ElevationScroll(props: Props) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
-    target: window ? window() : undefined
+    target: window ? window() : undefined,
   });
 
   return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0
+    elevation: trigger ? 4 : 0,
   });
 }
 
 const ButtonAppBar: React.FC = () => {
   const classes = useStyles();
-  const pathname = useSelector(
-    (state: AppState) => state.router.location.pathname
-  );
+  const pathname = useSelector((state: RootState) => state.router.location.pathname);
   const dispatch = useDispatch();
   const toggleDrawer = () => {
     dispatch(toggleDrawerAction(true));
@@ -74,7 +72,7 @@ const ButtonAppBar: React.FC = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              {pathname === "/" ? "首页" : "首页"}
+              {pathname === '/' ? '首页' : '首页'}
             </Typography>
             <Button color="inherit">Login</Button>
           </Toolbar>
